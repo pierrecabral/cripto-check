@@ -19,3 +19,8 @@ def shortenurl():
     currency = data["data"]["currency"]
     price = data["data"]["amount"]
     return render_template('shortenurl.html', shortcode=f"The BTC price in {currency} is {price}")
+
+
+@app.route('/health')
+def health():
+    return "200"
