@@ -1,0 +1,12 @@
+# docker-compose.yaml
+version: '3.8'
+services:
+  hellodjango:
+    image: hellodjango
+    privileged: true
+    user: root
+    ports:
+      - 8000:8000
+    container_name: hellodjango
+    volumes:
+      - /root/django/data/hellodjango:/data
