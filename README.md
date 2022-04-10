@@ -2,10 +2,8 @@
 ```
 By: Pierre Cabral pierrecabral@gmail.com
 For: Technical Assessment
+About: This repository serves as an example to run a simple web python app using Docker.
 ```
-
-### Instruction
-This repository serves as an example to run a simple web python app using Docker.
 
 ### Requirements
 

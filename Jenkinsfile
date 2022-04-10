@@ -8,7 +8,7 @@ pipeline {
                 sh 'docker ps'
                 echo 'Building docker image...'
                 sh 'ls -la'
-                sh 'docker build -t hellodjango .'
+                sh 'docker build -t cripto-check .'
 
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage('Verify') {
             steps {
                 echo 'Verifying....'
-                sh 'docker inspect hellodjango'
+                sh 'docker inspect cripto-check'
             }
         }
     }

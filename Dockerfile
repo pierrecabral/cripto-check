@@ -1,15 +1,17 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER Pierre Cabral
 
-RUN apt-get -y update && apt-get install -y python3-virtualenv virtualenv
-RUN virtualenv -p python3 /opt/venv-hellodjango
-
 # Install requirements
-ADD requirements.txt /opt/requirements.txt
-RUN /opt/venv-hellodjango/bin/pip install -r /opt/requirements.txt
+RUN apt-get -y update && apt-get install -y python3 python3-pip
+ADD requirements.txt /data/requirements.txt
+RUN pip3 install -r /data/requirements.txt
 
-ADD hellodjango /opt/hellodjango
-WORKDIR /opt/hellodjango/
+# Copy files
+ADD app.py /data/cripto-check/
+ADD templates /data/cripto-check/templates
 
-EXPOSE 8000
-CMD ["/opt/hellodjango/run.sh"]
+# Customise Environment
+WORKDIR /data/cripto-check/
+EXPOSE 5000
+ENTRYPOINT [ "python3" ]
+CMD [ "app.py" ]

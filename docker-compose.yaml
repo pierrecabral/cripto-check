@@ -1,12 +1,12 @@
 # docker-compose.yaml
 version: '3.8'
 services:
-  hellodjango:
-    image: hellodjango
+  cripto-check:
+    image: cripto-check
     privileged: true
     user: root
     ports:
-      - 8000:8000
-    container_name: hellodjango
-    volumes:
-      - /root/django/data/hellodjango:/data
+      - 5000:5000
+    container_name: cripto-check
+    # volumes:
+    #   - /tmp/cripto-check:/data
