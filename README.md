@@ -37,6 +37,9 @@ actions
 
 ### Usage
 
+You have 2 ways to check the cripto price of BTC:
+1. via web ui:
 Go to an browser on [http://127.0.0.1:5000](http://127.0.0.1:5000)
+Enter your desire currency and click in submit.
 
-You should now be able to enter the currency and press the button
+2. Via web calls calling http://127.0.0.1:5000/<currency>
