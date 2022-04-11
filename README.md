@@ -35,7 +35,8 @@ actions
 (ECS, EKS, ec2, lambda)
 ```
 
-### Instalation
+
+### Local Instalation
 Please clone the repo
 ```bash
 git clone https://github.com/pierrecabral/cripto-check.git
@@ -49,11 +50,17 @@ Now you should be able to run the run.sh script
 ./run.sh
 ```
 
-### Usage
+### Local Usage
 
 You have 2 ways to check the cripto price for BTC:
 1. via web ui:
 Go to an browser on [http://127.0.0.1:5000](http://127.0.0.1:5000)
 Enter your desire currency and click in submit.
 
-2. Via web calls calling http://127.0.0.1:5000/<currency>
+2. Via web calls calling [http://127.0.0.1:5000/currency]
+
+### Extras
+The application has a health check that returns 200 if the app is running to check simply run:
+```bash
+curl -I localhost:5000/health
+```

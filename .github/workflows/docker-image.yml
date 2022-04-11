@@ -17,9 +17,16 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag cripto-check:latest
+    - name: Run container in test mode
+      run: |
         docker run -d -p 5000:5000 -e app_mode=test  cripto-check
         sleep 10
+    - name: Run Unit Tests
+      run: |
+        echo "Legit request"
         curl http://localhost:5000/EUR
+        echo "Wrong Json respose"
         curl http://localhost:5000/GBP
+        echo "Wrong Currency"
         curl http://localhost:5000/ZZZ
         echo "Test done"
