@@ -35,9 +35,23 @@ actions
 (ECS, EKS, ec2, lambda)
 ```
 
+### Instalation
+Please clone the repo
+```bash
+git clone https://github.com/pierrecabral/cripto-check.git
+```
+Make sure the file run.sh has run permissions
+```bash
+chmod 777 run.sh
+```
+Now you should be able to run the run.sh script
+```bash
+./run.sh
+```
+
 ### Usage
 
-You have 2 ways to check the cripto price of BTC:
+You have 2 ways to check the cripto price for BTC:
 1. via web ui:
 Go to an browser on [http://127.0.0.1:5000](http://127.0.0.1:5000)
 Enter your desire currency and click in submit.
