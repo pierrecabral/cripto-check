@@ -8,5 +8,3 @@ services:
     ports:
       - 5000:5000
     container_name: cripto-check
-    # volumes:
-    #   - /tmp/cripto-check:/data

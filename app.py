@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import requests
 import json
 
@@ -21,9 +21,46 @@ def shortenurl():
     return render_template('shortenurl.html', shortcode=f"The BTC price in {currency} is {price}")
 
 
+@app.route('/EUR')
+def EUR():
+    response = requests.get(
+        'https://api.coinbase.com/v2/prices/spot?currency=EUR')
+    data = response.json()
+    # print(data)
+    return data
+
+
+@app.route('/GBP')
+def GBP():
+    response = requests.get(
+        'https://api.coinbase.com/v2/prices/spot?currency=GBP')
+    data = response.json()
+    # print(data)
+    return data
+
+
+@app.route('/USD')
+def USD():
+    response = requests.get(
+        'https://api.coinbase.com/v2/prices/spot?currency=USD')
+    data = response.json()
+    # print(data)
+    return data
+
+
+@app.route('/JPY')
+def JPY():
+    response = requests.get(
+        'https://api.coinbase.com/v2/prices/spot?currency=JPY')
+    data = response.json()
+    # print(data)
+    return data
+
+
 @app.route('/health')
 def health():
-    return "200"
+    status_code = Response(status=200)
+    return status_code
 
 
 if __name__ == '__main__':
