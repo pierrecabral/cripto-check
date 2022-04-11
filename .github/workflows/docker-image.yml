@@ -18,6 +18,8 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag cripto-check:latest
         docker run -d -p 5000:5000 -e app_mode=test  cripto-check
+        sleep 10
         curl http://localhost:5000/EUR
         curl http://localhost:5000/GBP
         curl http://localhost:5000/ZZZ
+        echo "Test done"
