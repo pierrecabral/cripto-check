@@ -35,6 +35,16 @@ actions
 (ECS, EKS, ec2, lambda)
 ```
 
+### Build and Unit Test process
+- The build process is done via github actions after the main branch be pushed/merged
+- After that the dockerfile is executed and the image is created
+- The pipeline does not cover push the image created to any docker registry (out of scope)
+- After the image is created the pipeline run the docker image in test mode passing the the ENV app_mode=test
+- Finally we run 3 unit tests against the container:
+      1. Legit call
+      2. Wrong Json file
+      3. Wrong currency
+
 
 ### Local Instalation
 Please clone the repo

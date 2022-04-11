@@ -21,12 +21,18 @@ jobs:
       run: |
         docker run -d -p 5000:5000 -e app_mode=test  cripto-check
         sleep 10
-    - name: Run Unit Tests
+    - name: Run Unit Tests (Legit request)
       run: |
-        echo "Legit request"
+        echo "Running Legit request"
         curl http://localhost:5000/EUR
-        echo "Wrong Json respose"
+        echo "Test done"
+    - name: Run Unit Tests (Wrong Json respose)
+      run: |
+        echo "Running Wrong Json respose"
         curl http://localhost:5000/GBP
-        echo "Wrong Currency"
+        echo "Test done"
+    - name: Run Unit Tests (Wrong Currency)
+      run: |
+        echo "Running Wrong Currency"
         curl http://localhost:5000/ZZZ
         echo "Test done"
