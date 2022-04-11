@@ -18,4 +18,5 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag cripto-check:latest
         docker-compose up -d
+        sleep 10
         curl http://localhost:5000/USD
