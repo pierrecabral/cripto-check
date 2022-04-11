@@ -15,7 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      # run: docker build . --file Dockerfile --tag cripto-check:$(date +%s) && docker-compose up -d && curl http://localhost:5000/USD
     - run: docker build . --file Dockerfile --tag cripto-check:latest
     - run: docker-compose up -d
     - run: curl http://localhost:5000/USD
