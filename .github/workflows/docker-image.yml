@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: |
+      run: |
         docker build . --file Dockerfile --tag cripto-check:latest
         docker-compose up -d
         curl http://localhost:5000/USD
